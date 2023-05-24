@@ -20,7 +20,7 @@ class TrendyMovie extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
           SizedBox(height: 5),
           Container(
-              height: 250,
+              height: 200,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: trend.length,
@@ -45,21 +45,24 @@ class TrendyMovie extends StatelessWidget {
                                     )));
                       },
                       child: Container(
-                        width: 150,
+                        padding: EdgeInsets.all(5),
+                        width: 250,
                         child: Column(
                           children: [
                             Container(
+                              height: 140,
+                              width: 270,
                               decoration: BoxDecoration(
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50)),
+                                    BorderRadius.all(Radius.circular(30)),
                                 image: DecorationImage(
                                   image: NetworkImage(
                                     'https://image.tmdb.org/t/p/w500' +
-                                        trend[index]['poster_path'],
-                                  ),
+                                        trend[index]['backdrop_path'],
+                                  ),fit: BoxFit.cover
                                 ),
                               ),
-                              height: 200,
+
                             ),
                             SizedBox(height: 5),
                             Container(
